@@ -1,7 +1,7 @@
 packages
 -------------
-express
-pg
+(ok)express
+(ok)pg
 hg-store
 (ok)sequelize
 cors

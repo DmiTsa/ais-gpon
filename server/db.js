@@ -1,7 +1,7 @@
 // const { Sequelize } = require('sequelize');
-import Sequelize from 'sequelize';
+import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize(
+export default new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
   process.env.DB_PASSWORD,
@@ -11,5 +11,3 @@ const sequelize = new Sequelize(
     port: process.env.DB_PORT,
   }
 );
-
-export default sequelize;
