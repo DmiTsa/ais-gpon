@@ -1,0 +1,9 @@
+packages
+-------------
+express
+pg
+hg-store
+(ok)sequelize
+cors
+(ok)dotenv
+(ок)nodemon
