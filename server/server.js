@@ -1,7 +1,10 @@
-import dotenv from 'dotenv';
-import express from 'express';
-import sequelize from './db.js';
-dotenv.config();
+require('dotenv').config();
+// import dotenv from 'dotenv';
+const express = require('express');
+// import express from 'express';
+const sequelize = require('./db.js');
+// import sequelize from './db.js';
+// dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
