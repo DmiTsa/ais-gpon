@@ -13,7 +13,7 @@ const BuildObject = sequelize.define('buildObject', {
   //   order: { type: DataTypes.STRING },
 });
 
-const Workers = sequelize.define('workers', {
+const Worker = sequelize.define('worker', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoincrement: true },
   nameOrganization: { type: DataTypes.STRING, allowNull: false },
   director: { type: DataTypes.STRING },
@@ -58,7 +58,7 @@ const Adress = sequelize.define('adress', {
   building: { type: DataTypes.STRING },
 });
 
-const Cables = sequelize.define('cables', {
+const Cable = sequelize.define('cable', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoincrement: true },
   name: { type: DataTypes.STRING, allowNull: false },
   capacity: { type: DataTypes.INTEGER, allowNull: false },
@@ -70,3 +70,46 @@ const CableUnit = sequelize.define('cableUnit', {
   type: { type: DataTypes.STRING, allowNull: false },
   name: { type: DataTypes.STRING, allowNull: false },
 });
+
+Pol.hasMany(CableSection);
+CableSection.belongsTo(Pol);
+
+InventaryCable.hasMany(CableSection);
+CableSection.belongsTo(InventaryCable);
+
+BuildObject.hasMany(InventaryCable);
+InventaryCable.belongsTo(BuildObject);
+
+BuildObject.hasMany(InventaryEquip);
+InventaryEquip.belongsTo(BuildObject);
+
+BuildObject.hasOne(Worker);
+Worker.belongsTo(BuildObject);
+
+BuildObject.hasOne(Order);
+Order.belongsTo(BuildObject);
+
+CableSection.hasOne(Cable);
+Cable.belongsTo(CableSection);
+
+CableSection.hasOne(CableUnit);
+CableUnit.belongsTo(CableSection);
+
+Adress.hasMany(CableUnit);
+CableUnit.belongsTo(Adress);
+
+InventaryEquip.hasMany(CableUnit);
+CableUnit.belongsTo(InventaryEquip);
+
+module.exports = {
+  BuildObject,
+  Worker,
+  Order,
+  InventaryCable,
+  InventaryEquip,
+  Pol,
+  CableSection,
+  Adress,
+  Cable,
+  CableUnit,
+};

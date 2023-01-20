@@ -1,13 +1,18 @@
 require('dotenv').config();
-// import dotenv from 'dotenv';
 const express = require('express');
-// import express from 'express';
 const sequelize = require('./db.js');
-// import sequelize from './db.js';
-// dotenv.config();
+const cors = require('cors');
+const models = require('./models');
+
+const PORT = process.env.PORT || 5000;
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+app.use(cors());
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.status(200).json({ mes: 'hello!' });
+});
 
 const start = async () => {
   try {

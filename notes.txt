@@ -6,4 +6,4 @@ hg-store
 (ok)sequelize
 cors
 (ok)dotenv
-(ок)nodemon
+(ок)nodemonpo
