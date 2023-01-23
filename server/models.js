@@ -71,6 +71,14 @@ const CableUnit = sequelize.define('cableUnit', {
   name: { type: DataTypes.STRING, allowNull: false },
 });
 
+//table of users
+const User = sequelize.define('user', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoincrement: true },
+  name: { type: DataTypes.STRING, unique: true, allowNull: false },
+  password: { type: DataTypes.STRING, allowNull: false },
+  role: { type: DataTypes.STRING, allowNull: false },
+});
+
 Pol.hasMany(CableSection);
 CableSection.belongsTo(Pol);
 
@@ -112,4 +120,5 @@ module.exports = {
   Adress,
   Cable,
   CableUnit,
+  User,
 };
