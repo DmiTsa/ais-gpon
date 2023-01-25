@@ -1,7 +1,7 @@
-class adressController {
+class AdressController {
   async create(req, res) {}
   async getAll(req, res) {}
   async delete(req, res) {}
 }
 
-module.exports = new adressController();
+module.exports = new AdressController();

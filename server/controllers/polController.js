@@ -1,7 +1,7 @@
-class polController {
+class PolController {
   async create(req, res) {}
   async getAll(req, res) {}
   async delete(req, res) {}
 }
 
-module.exports = new polController();
+module.exports = new PolController();

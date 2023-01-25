@@ -1,7 +1,7 @@
-class cableUnitController {
+class CableUnitController {
   async create(req, res) {}
   async getAll(req, res) {}
   async delete(req, res) {}
 }
 
-module.exports = new cableUnitController();
+module.exports = new CableUnitController();

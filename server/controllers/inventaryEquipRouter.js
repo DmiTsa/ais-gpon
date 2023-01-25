@@ -1,7 +1,7 @@
-class inventaryEquipRouter {
+class InventaryEquipRouter {
   async create(req, res) {}
   async getAll(req, res) {}
   async delete(req, res) {}
 }
 
-module.exports = new inventaryEquipRouter();
+module.exports = new InventaryEquipRouter();
